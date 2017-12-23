@@ -35,7 +35,6 @@ export class MemberComponent implements OnInit {
      alert(value);
   }
   editMember(memberId: any) {
-    alert(memberId);
     this.router.navigate(['/layout/memberupdate/' + memberId]);
   }
 }
