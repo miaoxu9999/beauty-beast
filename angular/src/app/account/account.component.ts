@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Router} from '@angular/router';
+import {MemberService} from "../member/member.service";
+import {Member} from "../member/member";
 
 @Component({
   selector: 'app-account',
@@ -8,13 +10,16 @@ import {Router} from '@angular/router';
 })
 export class AccountComponent implements OnInit {
 
-  constructor(public router: Router) { }
+  member: Member;
+  constructor(public router: Router, private memberService: MemberService) { }
 
   ngOnInit() {
 
       $('.parallax').parallax();
       //调用memberservice
-
+    console.log(sessionStorage.getItem("accountid"))
+  this.memberService.getMemberById(sessionStorage.getItem("accountid")).then(member => this.member = member);
+alert(this.member);
   }
   editprofile() {
       this.router.navigate(['/layout/accountupdate']);

@@ -13,9 +13,10 @@ export class MemberService {
       .catch(this.handleError);
   }
   getMemberById(stuid:any): Promise<Member>{
-    return this.http.get('/api/partymember')
+    return this.http.get('/api/partymember/' + stuid)
       .toPromise()
-      .then(data => data as Member)
+      .then(data => data['data'] as Member
+      )
       .catch(this.handleError);
   }
   update(member: Member): Promise<Member> {
