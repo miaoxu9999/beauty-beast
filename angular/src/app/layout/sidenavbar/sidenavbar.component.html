@@ -9,8 +9,8 @@
       <img src="../../../assets/images/office.jpg">
     </div>
     <a href="#!user"><img class="circle" src="../../../assets/images/user.png"></a>
-    <a href="#!name"><span class="white-text name">John Doe</span></a>
-    <a href="#!email"><span class="white-text email">jdandturk@gmail.com</span></a>
+    <a href="#!name"><span class="white-text name">{{name}}</span></a>
+    <a href="#!email"><span class="white-text email">{{privilegeType |  privilege}}</span></a>
   </div></li>
   <li><a [routerLink]="['./account']" routerLinkActive="active"><i class="material-icons">person</i>个人信息</a></li>
   <li><a [routerLink]="['./member']" routerLinkActive="active"><i class="material-icons">people</i>成员管理</a></li>
