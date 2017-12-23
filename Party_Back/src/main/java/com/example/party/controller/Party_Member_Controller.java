@@ -90,7 +90,7 @@ public class Party_Member_Controller {
     }
 
     @PostMapping(value = "/partymember")
-    public Result partyMemberAdd(PartyMember partyMember)
+    public Result partyMemberAdd(@RequestBody PartyMember partyMember)
     {
 
         return ResultUtil.success(partymemberrepository.save(partyMember));
@@ -98,16 +98,16 @@ public class Party_Member_Controller {
     }
 
     @DeleteMapping(value = "/partymember/{id}")
-    public void deletePartyMember(@PathVariable("id") Integer memberid)
+    public Result deletePartyMember(@PathVariable("id") Integer memberid)
     {
-        System.out.println(memberid);
         partymemberrepository.delete(memberid);
+        return ResultUtil.success();
     }
 
     @PutMapping(value = "/partymember")
-    public PartyMember PartyMemberUpdate(@RequestBody PartyMember partyMember)
+    public Result PartyMemberUpdate(@RequestBody PartyMember partyMember)
     {
         System.out.printf(partyMember.getName());
-        return partymemberrepository.save(partyMember);
+        return ResultUtil.success(partymemberrepository.save(partyMember));
     }
 }
