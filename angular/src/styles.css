@@ -1,0 +1,259 @@
+/* You can add global styles to this file, and also import other style files */
+.md-marginTop{
+  margin-top: 20px;
+}
+/* 居中效果*/
+.is-Transformed {
+  width: 50%;
+  margin: auto;
+  position: absolute !important;
+  top: 50%; left: 50%;
+  -webkit-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  transform: translate(-50%,-50%);
+}
+.full-width {
+  width: 100%;
+}
+.lg-width{
+  width: 80%;
+}
+.padding{
+  padding: 10px;
+}
+.margin{
+  margin: 10px;
+}
+.md-marginLeft{
+  margin-left: 20px;
+}
+.xla-marginRight{
+  margin-right: 200px;
+}
+.form-header {
+  color: #fff;
+  text-align: center;
+  margin-top: -50px;
+  margin-bottom: 3rem;
+  padding: 1rem;
+  border-radius: 2px;
+}
+.shadow{
+  -webkit-box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+  box-shadow: 0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
+.lightgrey{
+  color: lightgrey;
+}
+header, main, footer {
+  padding-left: 300px;
+}
+
+@media only screen and (max-width : 992px) {
+  header, main, footer {
+    padding-left: 0;
+  }
+}
+.header{
+  color: #ee6e73;
+  font-weight: 300;
+}
+.myfixed-btn {
+  position: fixed;
+  right: 23px;
+  bottom: 23px;
+  padding-top: 15px;
+  margin-bottom: 0;
+  z-index: 997;
+}
+.myfixed-btn ul {
+  left: 0;
+  right: 0;
+  text-align: center;
+  position: absolute;
+  bottom: 64px;
+  margin: 0;
+  visibility: hidden;
+}
+
+.myfixed-btn ul li {
+  margin-bottom: 15px;
+}
+.show{
+  visibility: visible!important;
+}
+.stepper-vertical {
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+.stepper-vertical, .stepper-vertical li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  position: relative;
+}
+.stepper-vertical {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+}
+.stepper-vertical {
+  display: flex;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+
+.stepper-vertical li {
+  display: flex;
+  -webkit-box-align: start;
+  -webkit-align-items: flex-start;
+  -ms-flex-align: start;
+  align-items: flex-start;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column
+}
+
+.stepper-vertical li a {
+  -webkit-align-self: flex-start;
+  -ms-flex-item-align: start;
+  align-self: flex-start;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative
+}
+
+.stepper-vertical li a .circle {
+  -webkit-box-ordinal-group: 2;
+  -webkit-order: 1;
+  -ms-flex-order: 1;
+  order: 1
+}
+
+.stepper-vertical li a .label {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-flow: column nowrap;
+  -ms-flex-flow: column nowrap;
+  flex-flow: column nowrap;
+  -webkit-box-ordinal-group: 3;
+  -webkit-order: 2;
+  -ms-flex-order: 2;
+  order: 2
+}
+
+.stepper-vertical li.completed a .label {
+  font-weight: 500
+}
+
+.stepper-vertical li .step-content {
+  display: block;
+  margin-top: 0;
+  margin-left: 50px;
+  padding: 15px
+}
+
+.stepper-vertical li .step-content p {
+  font-size: .875rem
+}
+
+.stepper-vertical li:not(:last-child):after {
+  content: " ";
+  position: absolute;
+  width: 1px;
+  height: -webkit-calc(100% - 40px);
+  height: calc(100% - 40px);
+  left: 35px;
+  top: 30px;
+  background-color: rgba(0, 0, 0, .1)
+}
+.stepper-horizontal, .stepper-horizontal li {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox
+}
+
+.stepper li.active a .label, .stepper li.completed a .label {
+  font-weight: 600;
+  color: rgba(0, 0, 0, .87)
+}
+
+.stepper-horizontal {
+  position: relative;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
+
+.stepper-horizontal li {
+  -webkit-transition: .5s;
+  transition: .5s;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1
+}
+.stepper-horizontal>li:not(:first-child):before, .stepper-horizontal>li:not(:last-child):after {
+  content: '';
+  position: relative;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1;
+  margin: 8px 0 0;
+  height: 1px;
+  background-color: rgba(0, 0, 0, .1)
+}
+
+
+.stepper-horizontal>li:hover {
+  background: #ddd
+}
+.horizontal li {
+  -webkit-transition: .5s;
+  transition: .5s;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-flex: 1;
+  -webkit-flex: 1;
+  -ms-flex: 1;
+  flex: 1
+}
+.horizontal li:hover {
+  background: #ddd
+}
+.horizontal {
+  position: relative;
+  display: flex;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between
+}
