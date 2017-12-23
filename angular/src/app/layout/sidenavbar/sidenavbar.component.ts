@@ -18,7 +18,6 @@ export class SidenavbarComponent implements OnInit {
     this.name = sessionStorage.getItem("name");
     this.privilegeType = sessionStorage.getItem("privilegeType");
     this.privilegeType = parseInt(this.privilegeType);
-    alert(this.privilegeType);
   }
 
 }
