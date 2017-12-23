@@ -1,3 +1,7 @@
 .hidden{
   visibility: hidden;
 }
+.card-image{
+  height: 300px;
+  overflow-y: hidden;
+}
