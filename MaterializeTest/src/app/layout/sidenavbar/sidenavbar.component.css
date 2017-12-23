@@ -1,0 +1,16 @@
+#logo-container {
+  height: 64px;
+  border-bottom: solid lightgrey 1px;
+}
+
+h1 span.logo-text {
+  font-size: 26px;
+  padding-left: 8px;
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.2s linear;
+}
+.active{
+  background-color: #eee;
+  box-shadow:  0 5px 11px 0 rgba(0,0,0,.18), 0 4px 15px 0 rgba(0,0,0,.15);
+}
