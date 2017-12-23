@@ -9,7 +9,7 @@ export class MemberService {
   getMembers(): Promise<Member[]> {
     return this.http.get('/api/partymember')
       .toPromise()
-      .then(data => data[] as Member[])
+      .then(data => data['data'] as Member[])
       .catch(this.handleError);
   }
   getMemberById(stuid:any): Promise<Member>{
