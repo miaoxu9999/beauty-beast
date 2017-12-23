@@ -1,6 +1,8 @@
 package com.example.party.exception;
 
 
+import com.example.party.enums.ResultEnum;
+
 /**
  * @Author: miaoxu
  * @Description:  Registration的Exception类
@@ -8,9 +10,9 @@ package com.example.party.exception;
  * @Modified By :
  */
 public class RegistrationException extends RuntimeException{
-    public RegistrationException(int code, String mes) {
-        super(mes);
-        this.code = code;
+    public RegistrationException(ResultEnum resultEnum) {
+        super(resultEnum.getMsg());
+        this.code = resultEnum.getCode();
     }
 
     private int code;//错误代码
