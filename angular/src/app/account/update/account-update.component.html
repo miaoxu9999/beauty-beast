@@ -1,0 +1,153 @@
+<div class="container">
+  <!--<h2 class="header">个人信息</h2>-->
+</div>
+<div class="row">
+  <div class="col s12 ">
+    <div class="card">
+      <div class="card-image">
+        <img src="../../assets/images/office.jpg" >
+        <span class="card-title">个人信息</span>
+      </div>
+      <div class="card-content">
+
+        <ul id="profile-page-about-details" class="collection z-depth-1">
+          <li class="collection-item">
+            <div class="row valign-wrapper">
+              <div class="col s5 ">
+                <i class="material-icons left valign">account_box</i> 姓名</div>
+              <div class="col s7 right-align">
+
+                <input placeholder="ABC Name" id="" type="text" class="validate center-align">
+
+              </div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row valign-wrapper">
+              <div class="col s5">
+                <i class="material-icons left">filter_1</i> 学号</div>
+              <div class="col s7 right-align">
+                <input placeholder="2017218" id="" type="text" class="validate center-align">
+              </div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row valign-wrapper">
+              <div class="col s5">
+                <i class="material-icons left">supervisor_account</i> 职务</div>
+              <div class="col s7 right-align">
+                <input placeholder="书记" id="" type="text" class="validate center-align"></div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row valign-wrapper">
+              <div class="col s5">
+                <i class="material-icons left">lock_outline</i> 修改密码</div>
+              <div class="col s7 right-align">
+                <input placeholder="修改密码" id="" type="password" class="validate center-align"></div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row valign-wrapper">
+              <div class="col s5">
+                <i class="material-icons left">lock</i> 确认密码</div>
+              <div class="col s7 right-align">
+                <input placeholder="修改密码" id="" type="password" class="validate center-align"></div>
+            </div>
+          </li>
+
+        </ul>
+
+
+      </div>
+      <div class="card-action">
+
+
+        <ul class="stepper stepper-horizontal">
+          <li class="">
+            <ul>
+              <li>
+                <a href="#!">
+                  <span class="circle">1</span>
+                  <span class="label">提交入党申请书</span>
+                </a>
+              </li>
+              <li>
+                <div class="step-content  lighten-3 margin">
+                  <input type="date" class="datepicker">
+                </div>
+              </li>
+
+            </ul>
+          </li>
+          <li class="">
+            <ul>
+              <li>
+                <a href="#!">
+                  <span class="circle">2</span>
+                  <span class="label">成为入党积极分子</span>
+                </a>
+              </li>
+              <li>
+                <div class="step-content  lighten-3 margin">
+                  <input  #rdjjfz type="date" class="datepicker">
+                </div>
+              </li>
+
+            </ul>
+
+
+          </li>
+          <li class="">
+            <ul>
+              <li>
+                <a href="#!">
+                  <span class="circle">3</span>
+                  <span class="label">定为发展对象</span>
+                </a>
+              </li>
+              <li>
+                <div class="step-content  lighten-3 margin">
+                  <input type="date" class="datepicker">
+                </div>
+              </li>
+
+            </ul>
+
+
+          </li>
+          <li class="">
+            <ul>
+              <li>
+                <a href="#!">
+                  <span class="circle">4</span>
+                  <span class="label">正式入党</span>
+                </a>
+              </li>
+              <li>
+                <div class="step-content  lighten-3 margin">
+                  <input type="date" class="datepicker">
+                </div>
+              </li>
+
+            </ul>
+
+          </li>
+        </ul>
+
+
+      </div>
+    </div>
+    <div class="right-align">
+      <a class=" btn light-green" (click)="save(rdjjfz.value)" >
+        <i class="material-icons">保存</i>
+      </a>
+      <a class=" btn red" (click)="cancel()" >
+        <i class="material-icons">取消</i>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
