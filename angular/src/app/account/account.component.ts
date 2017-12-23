@@ -17,8 +17,8 @@ export class AccountComponent implements OnInit {
 
       $('.parallax').parallax();
       //调用memberservice
-    console.log(sessionStorage.getItem("accountId"))
-  this.memberService.getMemberById(sessionStorage.getItem("accountid")).then(member => this.member = member);
+    console.log(sessionStorage.getItem("accountId"));
+  this.memberService.getMemberById(sessionStorage.getItem("accountId")).then(member => this.member = member);
 alert(this.member);
   }
   editprofile() {
