@@ -12,8 +12,8 @@ export class MemberService {
       .then(data => data['data'] as Member[])
       .catch(this.handleError);
   }
-  getMemberById(stuid:any): Promise<Member>{
-    return this.http.get('/api/partymember/' + stuid)
+  getMemberById(accountid:any): Promise<Member>{
+    return this.http.get('/api/partymember/' + accountid)
       .toPromise()
       .then(data => data['data'] as Member
       )
