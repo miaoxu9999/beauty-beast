@@ -20,19 +20,10 @@ export class MemberService {
       .catch(this.handleError);
   }
   update(member: Member): Promise<Member> {
-alert(JSON.stringify(member));
-const body = {"memberid":3,
-  "studentID":"2017218036",
-  "password":"1",
-  "fzdx":1383316075000,
-  "rdrq":1512224900000,
-  "name":"苗旭",
-  "privilegeType":2,
-  "tjsq":1513866520000,
-  "rdjjfz":1512138495000
-}
+
+
     return this.http
-      .put('/api/partymember', body, {headers: this.headers})
+      .put('/api/partymember', JSON.stringify(member), {headers: this.headers})
       .toPromise()
       .then(() => member);
   }
