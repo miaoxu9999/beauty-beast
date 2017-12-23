@@ -17,7 +17,7 @@
                                 <i class="material-icons left valign">account_box</i> 姓名</div>
                             <div class="col s7 right-align">
 
-                                <input placeholder="ABC Name" id="" type="text" class="validate center-align">
+                                <input placeholder="ABC Name" [(ngModel)]="member.name" id="" type="text" class="validate center-align">
 
                             </div>
                         </div>
@@ -39,22 +39,7 @@
                                 <input placeholder="书记" id="" type="text" class="validate center-align"></div>
                         </div>
                     </li>
-                    <li class="collection-item">
-                        <div class="row valign-wrapper">
-                            <div class="col s5">
-                                <i class="material-icons left">lock_outline</i> 修改密码</div>
-                            <div class="col s7 right-align">
-                                <input placeholder="修改密码" id="" type="password" class="validate center-align"></div>
-                        </div>
-                    </li>
-                    <li class="collection-item">
-                        <div class="row valign-wrapper">
-                            <div class="col s5">
-                                <i class="material-icons left">lock</i> 确认密码</div>
-                            <div class="col s7 right-align">
-                                <input placeholder="修改密码" id="" type="password" class="validate center-align"></div>
-                        </div>
-                    </li>
+
 
                 </ul>
 

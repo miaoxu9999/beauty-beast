@@ -23,8 +23,9 @@
     <tr *ngFor="let member of members ">
 
       <td>{{ member.studentID }}</td>
+      <td>{{member.name}}</td>
       <td>{{ member.privilegeType| privilege}}</td>
-      <td>男</td>
+
       <td>
         <a (click)="editMember(member.memberid)"  class="btn-floating green"><i class="material-icons">mode_edit</i></a>
       </td>

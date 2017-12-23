@@ -20,7 +20,7 @@ const appRoutes: Routes = [
     { path: 'account', component: AccountComponent },
     { path: 'check-in', component: CheckInComponent, },
     { path: 'accountupdate', component: AccountUpdateComponent },
-    { path: 'memberupdate', component: MemberUpdateComponent },
+    { path: 'memberupdate/:memberId', component: MemberUpdateComponent },
     { path: '', component: HomeComponent },
      ]},
   { path: 'login', component: LoginComponent},

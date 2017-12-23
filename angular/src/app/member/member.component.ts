@@ -11,7 +11,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./member.component.css']
 })
 export class MemberComponent implements OnInit {
-  headerInfo = ['学号', '权限', '性别', '操作'];
+  headerInfo = ['学号', '姓名', '权限', '操作'];
   members: Member[];
 
   constructor(private memberService: MemberService, private router: Router) { }
@@ -35,7 +35,8 @@ export class MemberComponent implements OnInit {
      alert(value);
   }
   editMember(memberId: any) {
-    this.router.navigate(['/layout/memberupdate']);
+    alert(memberId);
+    this.router.navigate(['/layout/memberupdate/' + memberId]);
   }
 }
 
