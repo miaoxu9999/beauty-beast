@@ -23,6 +23,8 @@ export class AuthService {
         this.account = data['data'];
         sessionStorage.setItem('isLogin', 'true');
         sessionStorage.setItem('accountId', this.account.memberid + '');
+        sessionStorage.setItem('name', this.account.name + '');
+        sessionStorage.setItem('privilegeType', this.account.privilegeType + '');
       }
     });
     return Observable.of(true).delay(1000);

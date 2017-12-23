@@ -6,7 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./sidenavbar.component.css']
 })
 export class SidenavbarComponent implements OnInit {
-
+  name: any;
+  privilegeType: any;
   constructor() { }
 
   ngOnInit() {
@@ -14,6 +15,10 @@ export class SidenavbarComponent implements OnInit {
       $('.sidenav').sidenav();
       $('.collapsible').collapsible();
     });
+    this.name = sessionStorage.getItem("name");
+    this.privilegeType = sessionStorage.getItem("privilegeType");
+    this.privilegeType = parseInt(this.privilegeType);
+    alert(this.privilegeType);
   }
 
 }
