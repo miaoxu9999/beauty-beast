@@ -20,18 +20,22 @@ export class MemberService {
       .catch(this.handleError);
   }
   update(member: Member): Promise<Member> {
-
-
     return this.http
       .put('/api/partymember', JSON.stringify(member), {headers: this.headers})
       .toPromise()
-      .then(() => member);
+      .then(() => member).catch(this.handleError);
   }
   create(member: Member): Promise<Member> {
     return this.http
       .post('/api', JSON.stringify(member), {headers: this.headers})
       .toPromise()
       .then(data => data['data'] as  Member)
+      .catch(this.handleError);
+  }
+  delete(id: number): Promise<void> {
+    return this.http.delete('/api/', {headers: this.headers})
+      .toPromise()
+      .then(() => null)
       .catch(this.handleError);
   }
   private handleError(error: any): Promise<any> {
