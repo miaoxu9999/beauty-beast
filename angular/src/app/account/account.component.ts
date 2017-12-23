@@ -19,7 +19,7 @@ export class AccountComponent implements OnInit {
       //调用memberservice
     console.log(sessionStorage.getItem("accountId"));
   this.memberService.getMemberById(sessionStorage.getItem("accountId")).then(member => this.member = member);
-alert(this.member);
+//alert(this.member);
   }
   editprofile() {
       this.router.navigate(['/layout/accountupdate']);

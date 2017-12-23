@@ -15,6 +15,8 @@ export class MemberUpdateComponent implements OnInit {
   member: Member;
   constructor(public router: Router,public memberService: MemberService, public route: ActivatedRoute) { }
   ngOnInit() {
+
+
     this.route.paramMap
       .switchMap ((params: ParamMap) => this.memberService.getMemberById(+params.get('memberId')))
       .subscribe(member => this.member = member);
@@ -23,6 +25,7 @@ export class MemberUpdateComponent implements OnInit {
     this.router.navigate(['/layout/member']);
   }
   save() {
-
+    //alert( JSON.stringify(this.member));
+      this.memberService.update(this.member);
   }
 }

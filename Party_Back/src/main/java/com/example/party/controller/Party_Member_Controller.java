@@ -92,7 +92,7 @@ public class Party_Member_Controller {
     }
 
     @PutMapping(value = "/partymember")
-    public PartyMember PartyMemberUpdate(PartyMember partyMember)
+    public PartyMember PartyMemberUpdate(@RequestBody PartyMember partyMember)
     {
         return partymemberrepository.save(partyMember);
     }

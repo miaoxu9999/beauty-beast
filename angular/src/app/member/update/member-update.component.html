@@ -17,7 +17,7 @@
                                 <i class="material-icons left valign">account_box</i> 姓名</div>
                             <div class="col s7 right-align">
 
-                                <input placeholder="ABC Name" [(ngModel)]="member.name" id="" type="text" class="validate center-align">
+                                <input #name placeholder="ABC Name" value="{{member.name}}" id="" type="text" class="validate center-align">
 
                             </div>
                         </div>
@@ -27,7 +27,7 @@
                             <div class="col s5">
                                 <i class="material-icons left">filter_1</i> 学号</div>
                             <div class="col s7 right-align">
-                                <input placeholder="2017218" id="" type="text" class="validate center-align">
+                                <input #studentID placeholder="2017218" [(ngModel)]="member.studentID" type="text" class="validate center-align">
                             </div>
                         </div>
                     </li>
@@ -36,10 +36,14 @@
                             <div class="col s5">
                                 <i class="material-icons left">supervisor_account</i> 职务</div>
                             <div class="col s7 right-align">
-                                <input placeholder="书记" id="" type="text" class="validate center-align"></div>
-                        </div>
-                    </li>
 
+                              <!-- Dropdown Structure -->
+
+                              <input #privilegeType placeholder="{{member.privilegeType|privilege}}" value="{{member.privilegeType|privilege}}"  type="select" class="validate center-align">
+                            </div>
+                        </div>
+
+                    </li>
 
                 </ul>
 
@@ -59,7 +63,7 @@
                             </li>
                             <li>
                                 <div class="step-content  lighten-3 margin">
-                                    <input type="date" class="datepicker">
+                                    <input #tjsq type="date" value="{{member.tjsq| date:'yyyy-MM-dd'}}" class="datepicker">
                                 </div>
                             </li>
 
@@ -75,7 +79,8 @@
                             </li>
                             <li>
                                 <div class="step-content  lighten-3 margin">
-                                    <input  #rdjjfz type="date" class="datepicker">
+
+                                    <input  #rdjjfz value="{{member.rdjjfz| date:'yyyy-MM-dd'}}" type="date" class="datepicker">
                                 </div>
                             </li>
 
@@ -93,7 +98,7 @@
                             </li>
                             <li>
                                 <div class="step-content  lighten-3 margin">
-                                    <input type="date" class="datepicker">
+                                    <input #fzdx type="date" value="{{member.fzdx| date:'yyyy-MM-dd'}}" class="datepicker">
                                 </div>
                             </li>
 
@@ -111,7 +116,7 @@
                             </li>
                             <li>
                                 <div class="step-content  lighten-3 margin">
-                                    <input type="date" class="datepicker">
+                                    <input type="date" value="{{member.rdrq| date:'yyyy-MM-dd'}}" class="datepicker">
                                 </div>
                             </li>
 
@@ -123,8 +128,9 @@
 
             </div>
         </div>
-        <div class="right-align">
-            <a class=" btn light-green" (click)="save(rdjjfz.value)" >
+
+      <div class="right-align">
+            <a class=" btn light-green" (click)="save()" >
                 <i class="material-icons">保存</i>
             </a>
             <a class=" btn red" (click)="cancel()" >
