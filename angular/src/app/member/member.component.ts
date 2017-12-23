@@ -34,5 +34,8 @@ export class MemberComponent implements OnInit {
   search(value: any) {
      alert(value);
   }
+  editMember(memberId: any) {
+    this.router.navigate(['/layout/memberupdate']);
+  }
 }
 

@@ -26,7 +26,7 @@
       <td>{{ member.privilegeType| privilege}}</td>
       <td>男</td>
       <td>
-        <a class="btn-floating green"><i class="material-icons">mode_edit</i></a>
+        <a (click)="editMember(member.memberid)"  class="btn-floating green"><i class="material-icons">mode_edit</i></a>
       </td>
     </tr>
     </tbody>

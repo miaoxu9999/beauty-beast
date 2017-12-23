@@ -11,6 +11,7 @@ import {LoginComponent} from './account/login/login.component';
 import {AuthService} from './auth.service';
 import {CheckInComponent} from './check-in/check-in.component';
 import {AccountUpdateComponent} from './account/update/account-update.component';
+import {MemberUpdateComponent} from './member/update/member-update.component';
 
 
 const appRoutes: Routes = [
@@ -19,6 +20,7 @@ const appRoutes: Routes = [
     { path: 'account', component: AccountComponent },
     { path: 'check-in', component: CheckInComponent, },
     { path: 'accountupdate', component: AccountUpdateComponent },
+    { path: 'memberupdate', component: MemberUpdateComponent },
     { path: '', component: HomeComponent },
      ]},
   { path: 'login', component: LoginComponent},
