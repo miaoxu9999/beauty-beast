@@ -5,10 +5,12 @@ import com.example.party.exception.PartyMemberException;
 import com.example.party.model.PartyMember;
 import com.example.party.model.Result;
 import com.example.party.repository.PartyMemberRepository;
+import com.example.party.util.DataConvert;
 import com.example.party.util.ResultUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -57,12 +59,23 @@ public class Party_Member_Controller {
     public Result getMemberById(@PathVariable("id") Integer memberid)
     {
         PartyMember partyMember = partymemberrepository.findOne(memberid);
+        System.out.printf(partyMember.getName());
         if (partyMember == null)
         {
             throw new PartyMemberException(ResultEnum.UNKNOWN_ERROR);
         }
+
         return ResultUtil.success(partyMember);
+
+
     }
+
+    @PostMapping(value = "/partymemberlike")
+    public Result getMemberLike(@RequestParam("condition") String condition, Pageable pageable)
+    {
+        return ResultUtil.success(partymemberrepository.findBynameAndprivilegeTypeAndstudentIDLike(condition, pageable));
+    }
+
 
 
     @PostMapping(value = "/partymember_bypage")
@@ -94,6 +107,7 @@ public class Party_Member_Controller {
     @PutMapping(value = "/partymember")
     public PartyMember PartyMemberUpdate(PartyMember partyMember)
     {
+        System.out.printf(partyMember.getName());
         return partymemberrepository.save(partyMember);
     }
 }

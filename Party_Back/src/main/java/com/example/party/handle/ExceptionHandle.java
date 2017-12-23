@@ -25,7 +25,7 @@ public class ExceptionHandle {
         {
             return ResultUtil.error(((PartyMemberException) e).getCode(), e.getMessage());
         }
-
+        System.out.printf(e.getMessage());
         return ResultUtil.error(100, "异常");
     }
 }

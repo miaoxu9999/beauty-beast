@@ -20,6 +20,7 @@ public class ResultUtil {
         Result result = new Result();
         result.setCode(0);
         result.setMsg("成功");
+        System.out.printf(data.toString());
         result.setData(data);
         return result;
     }

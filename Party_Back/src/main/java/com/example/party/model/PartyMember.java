@@ -14,7 +14,8 @@ import java.util.List;
  * @Author: miaoxu
  * @Description:
  * @Date: Created in 2017/12/4 0004
- * @Modified By :
+ * @Modified By :miaoxu
+ * 将权限类型修改为字符串类型
  */
 @Entity
 @Table(name = "PartyMember")
@@ -41,7 +42,15 @@ public class PartyMember {
     private String name;
 
 
-    private PrivilegeType privilegeType;
+    private String privilegeType;
+
+    public String getPrivilegeType() {
+        return privilegeType;
+    }
+
+    public void setPrivilegeType(String privilegeType) {
+        this.privilegeType = privilegeType;
+    }
 
     @OneToMany(mappedBy = "partyMember")
     @JsonBackReference
@@ -117,14 +126,6 @@ public class PartyMember {
         this.password = password;
     }
 
-
-    public int getPrivilegeType() {
-        return DataConvert.ConvertPrivilegeTypeToInteger(privilegeType);
-    }
-
-    public void setPrivilegeType(Integer privilegeType) {
-        this.privilegeType = DataConvert.ConvertIntegerToPrivilegeType(privilegeType);
-    }
 
     public List<RegistrationTemp> getRegistrationtemps() {
         return registrationtemps;
