@@ -26,6 +26,8 @@ import {MemberService} from './member/member.service';
 import { CalenderComponent } from './calender/calender.component';
 import { CheckInComponent } from './check-in/check-in.component';
 import {AccountUpdateComponent} from './account/update/account-update.component';
+import {MemberUpdateComponent} from './member/update/member-update.component';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -48,12 +50,14 @@ import {AccountUpdateComponent} from './account/update/account-update.component'
     Privilegepipe,
     CalenderComponent,
     CheckInComponent,
-    AccountUpdateComponent
+    AccountUpdateComponent,
+    MemberUpdateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
   ],
   providers: [MemberService],
   bootstrap: [AppComponent]
