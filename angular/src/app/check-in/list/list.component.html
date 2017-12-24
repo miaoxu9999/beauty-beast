@@ -1,0 +1,32 @@
+<div class="container">
+  <h2 class="header">我的签到</h2>
+  <div class="row">
+
+
+
+  </div>
+
+  <table id="myTable" class="table table-bordered table-hover highlight">
+    <thead>
+    <tr>
+      <th *ngFor="let header of headerInfo ">{{ header }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let registration of registrations " id="{{registration.registrationid}}" >
+
+      <td>{{registration.registrationid}}</td>
+      <td>{{ registration.meetingName }}</td>
+      <td>{{ registration.activityTime| date:'yyyy-MM-dd'}}</td>
+
+
+    </tr>
+    </tbody>
+
+  </table>
+
+
+
+
+</div>
+

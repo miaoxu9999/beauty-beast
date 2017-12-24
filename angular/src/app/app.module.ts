@@ -23,12 +23,15 @@ import { PageNotFoundComponent } from './page-not-found/page-not-found.component
 import {KeysPipe} from './keyspipe';
 import {Privilegepipe} from './privilegepipe';
 import {MemberService} from './member/member.service';
-import { CalenderComponent } from './calender/calender.component';
+import { CalenderComponent } from './check-in/calender/calender.component';
 import { CheckInComponent } from './check-in/check-in.component';
 import {AccountUpdateComponent} from './account/update/account-update.component';
 import {MemberUpdateComponent} from './member/update/member-update.component';
 import {FormsModule} from '@angular/forms';
 import {MemberCreateComponent} from './member/create/member-create.component';
+import {CheckInService} from './check-in/check-in.service';
+import { ListComponent } from './check-in/list/list.component';
+import { RegistrationComponent } from './registration/registration.component';
 
 
 
@@ -53,7 +56,9 @@ import {MemberCreateComponent} from './member/create/member-create.component';
     CheckInComponent,
     AccountUpdateComponent,
     MemberUpdateComponent,
-    MemberCreateComponent
+    MemberCreateComponent,
+    ListComponent,
+    RegistrationComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,7 @@ import {MemberCreateComponent} from './member/create/member-create.component';
     HttpClientModule,
     FormsModule
   ],
-  providers: [MemberService],
+  providers: [MemberService, CheckInService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

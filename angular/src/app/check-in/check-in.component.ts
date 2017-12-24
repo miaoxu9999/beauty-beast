@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import {Router} from '@angular/router';
+import {Registration} from './registration';
+import {CheckInService} from './check-in.service';
+import {Activity} from './activity';
 
 @Component({
   selector: 'app-check-in',
@@ -7,30 +11,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CheckInComponent implements OnInit {
 
-  constructor() { }
-
+  constructor(private checkInService: CheckInService, private router: Router) { }
   ngOnInit() {
-    $(document).ready(function() {
 
-      // page is now ready, initialize the calendar...
-
-      $('#calendar').fullCalendar({
-        // put your options and callbacks here
-        eventSources: [
-
-          // your event source
-          {
-            url: '/api/Registration', // use the `url` property
-            color: 'yellow',    // an option!
-            textColor: 'black'  // an option!
-          }
-
-          // any other sources...
-
-        ]
-
-      });
-
+    $(document).ready(function(){
+      $('ul.tabs').tabs();
     });
   }
 
