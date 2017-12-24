@@ -39,7 +39,6 @@ export class MemberComponent implements OnInit {
       this.totalPages = data['totalPages'];
       this.initPages();
       this.pageManager();
-
   });
   }
   pageManager(){

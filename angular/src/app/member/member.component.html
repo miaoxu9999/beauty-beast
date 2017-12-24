@@ -44,11 +44,11 @@
     <!--<li class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>-->
   <!--</ul>-->
   <ul class="pagination right-align">
-    <li *ngIf="!pre" class="disabled"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
-    <li *ngIf="pre" class="waves-effect"><a href="#!"><i class="material-icons">chevron_left</i></a></li>
+    <li *ngIf="!pre" class="disabled"><a ><i class="material-icons">chevron_left</i></a></li>
+    <li *ngIf="pre" class="waves-effect"><a (click)="getMembersByPage(page-1)" ><i class="material-icons">chevron_left</i></a></li>
     <li *ngFor="let page of pages "  class="{{page.pageStatus}}"><a  (click)="getMembersByPage(page.pageNum)" >{{ page.pageNum+1 }}</a></li>
-    <li *ngIf="next" class="waves-effect"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
-    <li *ngIf="!next" class="disabled"><a href="#!"><i class="material-icons">chevron_right</i></a></li>
+    <li *ngIf="next" class="waves-effect"><a (click)="getMembersByPage(page+1)" ><i class="material-icons">chevron_right</i></a></li>
+    <li *ngIf="!next" class="disabled"><a ><i class="material-icons">chevron_right</i></a></li>
   </ul>
   <div class="myfixed-btn">
     <a class="btn-floating btn-large red" (click)="myclick()" >

@@ -12,7 +12,7 @@ import 'rxjs/add/operator/switchMap';
   styleUrls: ['../member.component.css']
 })
 export class MemberUpdateComponent implements OnInit {
-  member: Member;
+  member = new Member();
   code=0;
   constructor(public router: Router,public memberService: MemberService, public route: ActivatedRoute) { }
   ngOnInit() {

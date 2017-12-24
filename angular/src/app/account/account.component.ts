@@ -10,7 +10,7 @@ import {Member} from "../member/member";
 })
 export class AccountComponent implements OnInit {
 
-  member: Member;
+  member = new Member();
   constructor(public router: Router, private memberService: MemberService) { }
 
   ngOnInit() {

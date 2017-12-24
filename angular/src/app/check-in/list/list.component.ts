@@ -18,4 +18,5 @@ export class ListComponent implements OnInit {
   getRegistrations(): void {
     this.checkInService.getRegistrations().then(data => this.registrations = data);
 
-  }}
+  }
+}

@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class SidenavbarComponent implements OnInit {
   name: any;
   privilegeType: any;
+  isAllow = false;
   constructor() { }
 
   ngOnInit() {
@@ -18,6 +19,9 @@ export class SidenavbarComponent implements OnInit {
     this.name = sessionStorage.getItem("name");
     this.privilegeType = sessionStorage.getItem("privilegeType");
     this.privilegeType = parseInt(this.privilegeType);
+    if(this.privilegeType === 1){
+      this.isAllow = true;
+    }
   }
 
 }

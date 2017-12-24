@@ -1,1 +1,41 @@
+<div class="container">
+  <h2 class="header">签到管理</h2>
+  <div class="row">
 
+
+
+  </div>
+
+  <table id="myTable" class="table table-bordered table-hover highlight">
+    <thead>
+    <tr>
+      <th *ngFor="let header of headerInfo ">{{ header }}</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let registration of registrations " id="{{registration.registrationid}}" >
+
+      <td>{{registration.registrationid}}</td>
+      <td>{{ registration.meetingName }}</td>
+      <td>{{ registration.activityTime| date:'yyyy-MM-dd'}}</td>
+      <td>
+        <a (click)="edit(registration.registrationid)"  class="btn-floating green"><i class="material-icons">mode_edit</i></a>
+      </td>
+
+    </tr>
+    </tbody>
+
+  </table>
+  <div class="myfixed-btn">
+    <a class="btn-floating btn-large red" (click)="myclick()" >
+      <i class="material-icons">menu</i>
+    </a>
+    <ul>
+      <li><a class="btn-floating red" (click)="delete()"><i class="material-icons">delete</i></a></li>
+      <li><a class="btn-floating yellow darken-1" (click)="create()"><i class="material-icons">add</i></a></li>
+    </ul>
+  </div>
+
+
+
+</div>

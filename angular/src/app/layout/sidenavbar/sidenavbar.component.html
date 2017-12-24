@@ -13,9 +13,9 @@
     <a href="#!email"><span class="white-text email">{{privilegeType |  privilege}}</span></a>
   </div></li>
   <li><a [routerLink]="['./account']" routerLinkActive="active"><i class="material-icons">person</i>个人信息</a></li>
-  <li><a [routerLink]="['./member']" routerLinkActive="active"><i class="material-icons">people</i>成员管理</a></li>
+  <li *ngIf="isAllow"><a [routerLink]="['./member']" routerLinkActive="active"><i class="material-icons">people</i>成员管理</a></li>
   <li><a [routerLink]="['./check-in']" routerLinkActive="active"><i class="material-icons">event_available</i>我的签到</a></li>
-  <li><a href="#!"><i class="material-icons">perm_contact_calendar</i>签到管理</a></li>
+  <li *ngIf="isAllow"><a [routerLink]="['./registeration']" routerLinkActive="active"><i class="material-icons">perm_contact_calendar</i>签到管理</a></li>
   <!--<li><a href="#!"><i class="material-icons">class</i>查看模版</a></li>-->
   <!--<li><a href="#!"><i class="material-icons">collections_bookmark</i>模版管理</a></li>-->
   <!--<li><a href="#!"><i class="material-icons">attach_file</i>材料管理</a></li>-->
