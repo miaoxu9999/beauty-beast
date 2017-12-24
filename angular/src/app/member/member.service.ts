@@ -33,7 +33,7 @@ export class MemberService {
       .catch(this.handleError);
   }
   delete(id: number): Promise<void> {
-    return this.http.delete('/api/', {headers: this.headers})
+    return this.http.delete('/api/partymember/' + id,{headers: this.headers})
       .toPromise()
       .then(() => null)
       .catch(this.handleError);

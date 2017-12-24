@@ -28,6 +28,7 @@ import { CheckInComponent } from './check-in/check-in.component';
 import {AccountUpdateComponent} from './account/update/account-update.component';
 import {MemberUpdateComponent} from './member/update/member-update.component';
 import {FormsModule} from '@angular/forms';
+import {MemberCreateComponent} from './member/create/member-create.component';
 
 
 
@@ -51,7 +52,8 @@ import {FormsModule} from '@angular/forms';
     CalenderComponent,
     CheckInComponent,
     AccountUpdateComponent,
-    MemberUpdateComponent
+    MemberUpdateComponent,
+    MemberCreateComponent
   ],
   imports: [
     BrowserModule,

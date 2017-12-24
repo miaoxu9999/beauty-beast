@@ -37,5 +37,23 @@ export class MemberComponent implements OnInit {
   editMember(memberId: any) {
     this.router.navigate(['/layout/memberupdate/' + memberId]);
   }
+  select(memberid: number){
+    if($("#" + memberid).attr('class') === 'selected'){
+      $("#" + memberid).removeClass('selected');
+    }else{
+      $("#" + memberid).addClass("selected");
+    }
+
+  }
+  delete(){
+    const selectEl = $('.selected');
+
+    for( let i = 0 ; i < selectEl.length; i++){
+          this.memberService.delete(selectEl.eq(i).attr('id'));
+    }
+  }
+  create(){
+    this.router.navigate(['/layout/membercreate']);
+  }
 }
 
