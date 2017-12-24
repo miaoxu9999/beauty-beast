@@ -20,7 +20,7 @@ public class ResultUtil {
         Result result = new Result();
         result.setCode(0);
         result.setMsg("成功");
-        System.out.printf(data.toString());
+//        System.out.printf(data.toString());
         result.setData(data);
         return result;
     }
@@ -32,9 +32,18 @@ public class ResultUtil {
      * @Description: 返回无结果的成功信息
      * @Date: 11:36 2017/12/18 0018
      **/
+    /**
+     * @Author: zzy
+     * @param:
+     * @Description: 返回无结果的成功信息
+     * @Date: 14:06 2017/12/24 0018
+     **/
     public static Result success()
     {
-        return success(null);
+        Result result = new Result();
+        result.setCode(0);
+        result.setMsg("成功");
+        return result;
     }
 
     /**

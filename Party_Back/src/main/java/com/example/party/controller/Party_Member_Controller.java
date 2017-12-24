@@ -82,7 +82,13 @@ public class Party_Member_Controller {
     public Result partyMembers_page(@RequestParam("page") int page, @RequestParam("size") int size) throws Exception
     {
         Page<PartyMember> partyMembers = partymemberrepository.findAll(new PageRequest(page, size));
-        if (partyMembers == null || partyMembers.getSize() < page * size)
+        System.out.println(partyMembers.getSize());
+//        if (partyMembers == null || partyMembers.getSize() < page * size)
+//        {
+//            throw new PartyMemberException(ResultEnum.PAGE_TOO_LARGE);
+//        }
+        //修改分页边界条件 auth：zzy 2017/12/24
+        if (partyMembers == null ||partyMembers.getContent().size() <=0)
         {
             throw new PartyMemberException(ResultEnum.PAGE_TOO_LARGE);
         }
@@ -93,6 +99,7 @@ public class Party_Member_Controller {
     public Result partyMemberAdd(@RequestBody PartyMember partyMember)
     {
 
+        partyMember.setPassword("123456");//设置默认密码 Auth：zzy 2017／12／24
         return ResultUtil.success(partymemberrepository.save(partyMember));
 
     }

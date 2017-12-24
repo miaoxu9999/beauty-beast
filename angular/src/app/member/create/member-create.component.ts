@@ -5,7 +5,7 @@ import {Member} from '../member';
 
 @Component({
   selector: 'app-member-create',
-  templateUrl: './member-create.component.html',
+  templateUrl: '../update/member-update.component.html',
   styleUrls: ['../member.component.css']
 })
 export class MemberCreateComponent implements OnInit {
@@ -15,6 +15,6 @@ export class MemberCreateComponent implements OnInit {
   ngOnInit(){
   }
   save(){
-    alert(JSON.stringify(this.member));
+    this.memberService.create(this.member).then();
   }
 }

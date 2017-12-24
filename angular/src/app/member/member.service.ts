@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {Member} from './member';
-import {HttpClient, HttpHeaders} from '@angular/common/http';
+import {HttpClient, HttpHeaders, HttpParams} from '@angular/common/http';
 
 @Injectable()
 export class MemberService {
@@ -12,6 +12,14 @@ export class MemberService {
       .then(data => data['data'] as Member[])
       .catch(this.handleError);
   }
+  getMembersByPage(page: any, size: any): Promise<any> {
+    return this.http.post('/api/partymember_bypage', null, {
+      params: new HttpParams().set('page', page).set('size', size)
+    })
+      .toPromise()
+      .then(data => data['data'] as any)
+      .catch(this.handleError);
+  }
   getMemberById(accountid:any): Promise<Member>{
     return this.http.get('/api/partymember/' + accountid)
       .toPromise()
@@ -19,23 +27,31 @@ export class MemberService {
       )
       .catch(this.handleError);
   }
-  update(member: Member): Promise<Member> {
+  update(member: Member): Promise<number> {
     return this.http
       .put('/api/partymember', JSON.stringify(member), {headers: this.headers})
       .toPromise()
-      .then(() => member).catch(this.handleError);
+      .then(data => data['code'] as number).catch(this.handleError);
   }
   create(member: Member): Promise<Member> {
     return this.http
-      .post('/api', JSON.stringify(member), {headers: this.headers})
+      .post('/api/partymember', JSON.stringify(member), {headers: this.headers})
       .toPromise()
       .then(data => data['data'] as  Member)
       .catch(this.handleError);
   }
-  delete(id: number): Promise<void> {
-    return this.http.delete('/api/partymember/' + id,{headers: this.headers})
+  delete(id: number): Promise<number> {
+    return this.http.delete('/api/partymember/' + id, {headers: this.headers})
       .toPromise()
-      .then(() => null)
+      .then(data => data['code'] as number)
+      .catch(this.handleError);
+  }
+  search(value: any): Promise<Member[]> {
+    return this.http.post('/api/partymemberlike', null, {
+      params: new HttpParams().set('condition', value)
+    })
+      .toPromise()
+      .then(data => data['data']['content'] as Member[])
       .catch(this.handleError);
   }
   private handleError(error: any): Promise<any> {

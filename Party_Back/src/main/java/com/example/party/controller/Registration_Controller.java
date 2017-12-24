@@ -21,6 +21,7 @@ import java.util.List;
  * @Modified By :
  */
 @RestController
+@RequestMapping(value = "/api")
 public class Registration_Controller {
     @Autowired
     private RegistrationRepository registration_repository;
@@ -31,7 +32,7 @@ public class Registration_Controller {
     /*
     添加签到表
      */
-    @PostMapping(value = "Registration")
+    @PostMapping(value = "/Registration")
     public Result addRegistration(@RequestBody Registration registration)
     {
         return ResultUtil.success(registration_repository.save(registration));
@@ -40,7 +41,7 @@ public class Registration_Controller {
     /*
     更新签到表
      */
-    @PutMapping(value = "Registration")
+    @PutMapping(value = "/Registration")
     public Result updateRegistration(@RequestBody Registration registration)
     {
         return ResultUtil.success(registration_repository.save(registration));
@@ -49,7 +50,7 @@ public class Registration_Controller {
     /*
     删除签到表,级联删除，会将registration_temp的相关内容删除
      */
-    @DeleteMapping(value = "Registration/{id}")
+    @DeleteMapping(value = "/Registration/{id}")
     public Result deleteRegistration(@PathVariable("id") Integer id)
     {
         registration_repository.delete(id);
@@ -59,7 +60,7 @@ public class Registration_Controller {
     /*
     查询签到表
      */
-    @GetMapping(value = "Registration")
+    @GetMapping(value = "/Registration")
     public Result registrationList()
     {
         return ResultUtil.success(registration_repository.findAll());

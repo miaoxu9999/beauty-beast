@@ -17,7 +17,7 @@
                                 <i class="material-icons left valign">account_box</i> 姓名</div>
                             <div class="col s7 right-align">
 
-                                <input #name placeholder="ABC Name" value="{{member.name}}" id="" type="text" class="validate center-align">
+                                <input #name placeholder="ABC Name" [(ngModel)]="member.name" id="" type="text" class="validate center-align">
 
                             </div>
                         </div>
@@ -39,7 +39,7 @@
 
                               <!-- Dropdown Structure -->
 
-                              <input #privilegeType placeholder="{{member.privilegeType|privilege}}" value="{{member.privilegeType|privilege}}"  type="select" class="validate center-align">
+                              <input #privilegeType placeholder="{{member.privilegeType|privilege}}" [ngModel]="member.privilegeType|privilege" (ngModelChange)="member.privilegeType=$event"   type="select" class="validate center-align">
                             </div>
                         </div>
 
@@ -63,7 +63,7 @@
                             </li>
                             <li>
                                 <div class="step-content  lighten-3 margin">
-                                    <input #tjsq type="date" value="{{member.tjsq| date:'yyyy-MM-dd'}}" class="datepicker">
+                                    <input #tjsq type="date" [ngModel]="member.tjsq| date:'yyyy-MM-dd'" (ngModelChange)="member.tjsq=$event"  class="datepicker">
                                 </div>
                             </li>
 
@@ -80,7 +80,7 @@
                             <li>
                                 <div class="step-content  lighten-3 margin">
 
-                                    <input  #rdjjfz value="{{member.rdjjfz| date:'yyyy-MM-dd'}}" type="date" class="datepicker">
+                                    <input  #rdjjfz [ngModel]="member.rdjjfz| date:'yyyy-MM-dd'" (ngModelChange)="member.rdjjfz=$event" type="date" class="datepicker">
                                 </div>
                             </li>
 
@@ -98,7 +98,7 @@
                             </li>
                             <li>
                                 <div class="step-content  lighten-3 margin">
-                                    <input #fzdx type="date" value="{{member.fzdx| date:'yyyy-MM-dd'}}" class="datepicker">
+                                    <input #fzdx type="date" [ngModel]="member.fzdx| date:'yyyy-MM-dd'" (ngModelChange)="member.fzdx=$event" class="datepicker">
                                 </div>
                             </li>
 
@@ -116,7 +116,7 @@
                             </li>
                             <li>
                                 <div class="step-content  lighten-3 margin">
-                                    <input type="date" value="{{member.rdrq| date:'yyyy-MM-dd'}}" class="datepicker">
+                                    <input type="date"[ngModel]="member.rdrq| date:'yyyy-MM-dd'" (ngModelChange)="member.rdrq=$event"  class="datepicker">
                                 </div>
                             </li>
 

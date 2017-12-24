@@ -13,6 +13,7 @@ import 'rxjs/add/operator/switchMap';
 })
 export class MemberUpdateComponent implements OnInit {
   member: Member;
+  code=0;
   constructor(public router: Router,public memberService: MemberService, public route: ActivatedRoute) { }
   ngOnInit() {
     this.route.paramMap
@@ -23,6 +24,14 @@ export class MemberUpdateComponent implements OnInit {
     this.router.navigate(['/layout/member']);
   }
   save() {
-      this.memberService.update(this.member);
+      this.memberService.update(this.member).then(code => this.code = code);
+      if (this.code === 0) {
+        if (confirm('修改成功，是否离开本页？')) {
+          this.router.navigate(['/layout/member']);
+        }
+      }
+      else{
+        alert('修改失败');
+      }
   }
 }
