@@ -10,7 +10,8 @@ public enum ResultEnum {
     UNKNOWN_ERROR(-1, "未知错误"),
     SUCCESS(1, "成功"),
     NO_USER_FOUND(2, "您的用户名或账户输入有误，请仔细查验您的账户和密码"),
-    PAGE_TOO_LARGE(3, "分页数目或者错误")
+    PAGE_TOO_LARGE(3, "分页数目或者错误"),
+    NO_REGISTRATION(4, "没有对应的签到表"),
     ;
     private int code;
     private String msg;

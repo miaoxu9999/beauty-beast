@@ -1,6 +1,7 @@
 package com.example.party.handle;
 
 import com.example.party.exception.PartyMemberException;
+import com.example.party.exception.RegistrationException;
 import com.example.party.model.Result;
 import com.example.party.util.ResultUtil;
 import org.springframework.web.bind.annotation.ControllerAdvice;
@@ -24,6 +25,10 @@ public class ExceptionHandle {
         if (e instanceof PartyMemberException)
         {
             return ResultUtil.error(((PartyMemberException) e).getCode(), e.getMessage());
+        }
+        else if (e instanceof RegistrationException)
+        {
+            return ResultUtil.error(((RegistrationException) e).getCode(), e.getMessage());
         }
         System.out.printf(e.getMessage());
         return ResultUtil.error(100, "异常");
