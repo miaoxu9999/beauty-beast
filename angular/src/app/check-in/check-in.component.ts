@@ -10,6 +10,28 @@ export class CheckInComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    $(document).ready(function() {
+
+      // page is now ready, initialize the calendar...
+
+      $('#calendar').fullCalendar({
+        // put your options and callbacks here
+        eventSources: [
+
+          // your event source
+          {
+            url: '/api/Registration', // use the `url` property
+            color: 'yellow',    // an option!
+            textColor: 'black'  // an option!
+          }
+
+          // any other sources...
+
+        ]
+
+      });
+
+    });
   }
 
 }
