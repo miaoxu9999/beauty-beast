@@ -14,6 +14,7 @@ import {AccountUpdateComponent} from './account/update/account-update.component'
 import {MemberUpdateComponent} from './member/update/member-update.component';
 import {MemberCreateComponent} from './member/create/member-create.component';
 import {RegistrationComponent} from './registration/registration.component';
+import {RegistrationUpdateComponent} from './registration/update/registration-update.component';
 
 
 const appRoutes: Routes = [
@@ -25,6 +26,7 @@ const appRoutes: Routes = [
     { path: 'membercreate', component: MemberCreateComponent },
     { path: 'memberupdate/:memberId', component: MemberUpdateComponent },
     { path: 'registeration', component: RegistrationComponent },
+    { path: 'registerationupdate/:registerationId', component: RegistrationUpdateComponent },
     { path: '', component: HomeComponent },
      ]},
   { path: 'login', component: LoginComponent},

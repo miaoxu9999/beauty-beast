@@ -32,6 +32,7 @@ import {MemberCreateComponent} from './member/create/member-create.component';
 import {CheckInService} from './check-in/check-in.service';
 import { ListComponent } from './check-in/list/list.component';
 import { RegistrationComponent } from './registration/registration.component';
+import {RegistrationUpdateComponent} from './registration/update/registration-update.component';
 
 
 
@@ -58,7 +59,8 @@ import { RegistrationComponent } from './registration/registration.component';
     MemberUpdateComponent,
     MemberCreateComponent,
     ListComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    RegistrationUpdateComponent
   ],
   imports: [
     BrowserModule,

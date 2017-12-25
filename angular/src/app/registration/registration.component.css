@@ -1,0 +1,10 @@
+.hidden{
+  visibility: hidden;
+}
+.card-image{
+  height: 300px;
+  overflow-y: hidden;
+}
+.selected{
+  background-color: #e4e2e2;
+}

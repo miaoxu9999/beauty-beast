@@ -1,0 +1,54 @@
+<div class="container">
+</div>
+<div class="row">
+  <div class="col s12 ">
+    <div class="card">
+      <div class="card-image">
+        <img src="../../assets/images/office.jpg" >
+        <span class="card-title">{{title}}</span>
+      </div>
+      <div class="card-content">
+
+        <ul id="profile-page-about-details" class="collection z-depth-1">
+          <li class="collection-item">
+            <div class="row valign-wrapper">
+              <div class="col s5 ">
+                <i class="material-icons left valign">account_box</i> 活动名称</div>
+              <div class="col s7 right-align">
+
+                <input #name placeholder="ABC Name" [(ngModel)]="registration.meetingName" id="" type="text" class="validate center-align">
+
+              </div>
+            </div>
+          </li>
+          <li class="collection-item">
+            <div class="row valign-wrapper">
+              <div class="col s5">
+                <i class="material-icons left">filter_1</i> 活动时间</div>
+              <div class="col s7 right-align">
+                <input type="date"[ngModel]="registration.activityTime| date:'yyyy-MM-dd'" (ngModelChange)="member.rdrq=$event"  class="datepicker">
+              </div>
+            </div>
+          </li>
+
+
+        </ul>
+
+
+      </div>
+
+    </div>
+
+    <div class="right-align">
+      <a class=" btn light-green" (click)="save()" >
+        <i class="material-icons">保存</i>
+      </a>
+      <a class=" btn red" (click)="cancel()" >
+        <i class="material-icons">取消</i>
+      </a>
+
+    </div>
+  </div>
+
+</div>
+
