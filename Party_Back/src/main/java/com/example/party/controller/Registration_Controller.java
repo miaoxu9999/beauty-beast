@@ -77,7 +77,7 @@ public class Registration_Controller {
     根据id查询签到表
      */
     @GetMapping(value = "/Registration/{id}")
-    public Result getRegistrationByi(@PathVariable("id") Integer id)
+    public Result getRegistrationByid(@PathVariable("id") Integer id)
     {
         Registration registration = registration_repository.findOne(id);
         if (registration == null)
@@ -86,7 +86,6 @@ public class Registration_Controller {
         }
         return ResultUtil.success(registration);
     }
-
 
 
 
