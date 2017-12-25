@@ -26,7 +26,7 @@
               <div class="col s5">
                 <i class="material-icons left">filter_1</i> 活动时间</div>
               <div class="col s7 right-align">
-                <input type="date"[ngModel]="registration.activityTime| date:'yyyy-MM-dd'" (ngModelChange)="member.rdrq=$event"  class="datepicker">
+                <input type="date"[ngModel]="registration.activityTime| date:'yyyy-MM-dd'" (ngModelChange)="registration.activityTime=$event"  class="datepicker">
               </div>
             </div>
           </li>
@@ -36,7 +36,83 @@
 
 
       </div>
+      <div class="card-action">
 
+
+        <ul class=" stepper-vertical ">
+          <li class="">
+            <ul>
+              <li>
+                <a href="#!">
+                  <span class="circle">2017218003</span>
+                  <span class="label">苗旭</span>
+                </a>
+              </li>
+              <li>
+                <div class="step-content  lighten-3 margin">
+                  <div class="switch">
+                    <label>
+                      已到
+                      <input type="checkbox">
+                      <span class="lever"></span>
+                      未到
+                    </label>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </li>
+          <li class="">
+            <ul>
+              <li>
+                <a href="#!">
+                  <span class="circle">2017218004</span>
+                  <span class="label">么红帅</span>
+                </a>
+              </li>
+              <li>
+                <div class="step-content  lighten-3 margin">
+                  <div class="switch">
+                    <label>
+                      已到
+                      <input type="checkbox">
+                      <span class="lever"></span>
+                      未到
+                    </label>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </li>
+          <li class="">
+            <ul>
+              <li>
+                <a href="#!">
+                  <span class="circle">2017218005</span>
+                  <span class="label">吴虹</span>
+                </a>
+              </li>
+              <li>
+                <div class="step-content  lighten-3 margin">
+                  <div class="switch">
+                    <label>
+                      已到
+                      <input type="checkbox">
+                      <span class="lever"></span>
+                      未到
+                    </label>
+                  </div>
+                </div>
+              </li>
+
+            </ul>
+          </li>
+        </ul>
+
+
+      </div>
     </div>
 
     <div class="right-align">
