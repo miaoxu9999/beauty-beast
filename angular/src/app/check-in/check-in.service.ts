@@ -15,8 +15,8 @@ export class CheckInService {
 
 
 
-  getRegistrationById(accountid:any): Promise<Registration>{
-    return this.http.get('/api/partymember/' + accountid)
+  getRegistrationById(registrationId:any): Promise<Registration>{
+    return this.http.get('/api/getAllAllPeopleRegistration/' + registrationId)
       .toPromise()
       .then(data => data['data'] as Registration
       )
@@ -24,19 +24,19 @@ export class CheckInService {
   }
   update(registration: Registration): Promise<number> {
     return this.http
-      .put('/api/partymember', JSON.stringify(registration), {headers: this.headers})
+      .put('/api/Registration', JSON.stringify(registration), {headers: this.headers})
       .toPromise()
       .then(data => data['code'] as number).catch(this.handleError);
   }
   create(registration: Registration): Promise<Registration> {
     return this.http
-      .post('/api/partymember', JSON.stringify(registration), {headers: this.headers})
+      .post('/api/Registration', JSON.stringify(registration), {headers: this.headers})
       .toPromise()
       .then(data => data['data'] as  Registration)
       .catch(this.handleError);
   }
   delete(id: number): Promise<number> {
-    return this.http.delete('/api/partymember/' + id, {headers: this.headers})
+    return this.http.delete('/api/Registration/' + id, {headers: this.headers})
       .toPromise()
       .then(data => data['code'] as number)
       .catch(this.handleError);
