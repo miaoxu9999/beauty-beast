@@ -52,9 +52,11 @@ public class PartyMember {
         this.privilegeType = privilegeType;
     }
 
-    @OneToMany(mappedBy = "partyMember")
+
+
+    @OneToMany(mappedBy = "partyMember", cascade = CascadeType.ALL, fetch = FetchType.EAGER )
     @JsonBackReference
-    private List<RegistrationTemp> registrationtemps;
+    private List<RegistrationTemp> registration_temps;
 
     @DateTimeFormat
     private Date tjsq;//提交入党申请书的日期
@@ -106,10 +108,6 @@ public class PartyMember {
         this.name = name;
     }
 
-
-
-
-
     public String getStudentID() {
         return studentID;
     }
@@ -126,13 +124,12 @@ public class PartyMember {
         this.password = password;
     }
 
-
-    public List<RegistrationTemp> getRegistrationtemps() {
-        return registrationtemps;
+    public List<RegistrationTemp> getRegistration_temps() {
+        return registration_temps;
     }
 
-    public void setRegistrationtemps(List<RegistrationTemp> registrationtemps) {
-        this.registrationtemps = registrationtemps;
+    public void setRegistration_temps(List<RegistrationTemp> registration_temps) {
+        this.registration_temps = registration_temps;
     }
 
 

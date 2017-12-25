@@ -28,4 +28,6 @@ public interface RegistrationRepository extends JpaRepository<Registration, Inte
     public List<Registration> findByregistrationid(Integer id);
 
 
+
+
 }

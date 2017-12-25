@@ -22,11 +22,12 @@ public class RegistrationTemp {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne(optional = false)
+//    @JsonIgnore
     private PartyMember partyMember;
 
 
     @ManyToOne(optional = false)
-    @JsonIgnore
+//    @JsonIgnore
     private Registration registration;
 
     private RegistrationType registrationType; //签到状态

@@ -2,10 +2,14 @@ package com.example.party.controller;
 
 import com.example.party.RegistrationType;
 import com.example.party.enums.ResultEnum;
+import com.example.party.exception.PartyMemberException;
 import com.example.party.exception.RegistrationException;
+import com.example.party.exception.RegistrationTempException;
+import com.example.party.model.PartyMember;
 import com.example.party.model.Registration;
 import com.example.party.model.RegistrationTemp;
 import com.example.party.model.Result;
+import com.example.party.repository.PartyMemberRepository;
 import com.example.party.repository.RegistrationRepository;
 import com.example.party.repository.RegistrationTempRepository;
 import com.example.party.util.ResultUtil;
@@ -25,6 +29,9 @@ import java.util.List;
 public class Registration_Controller {
     @Autowired
     private RegistrationRepository registration_repository;
+
+    @Autowired
+    private PartyMemberRepository partyMemberRepository;
 
     @Autowired
     private RegistrationTempRepository registrationTempRepository;
@@ -66,20 +73,7 @@ public class Registration_Controller {
         return ResultUtil.success(registration_repository.findAll());
     }
 
-    /*
-    根据ID查询签到表
-     */
-    @GetMapping(value =  "/getAllAllPeopleRegistration/{id}")
-    public Result getAllPeopleRegistration(@PathVariable("id") Integer id)
-    {
-        Registration registration = registration_repository.findByregistrationid(id).get(0);
-        if (registration == null)
-        {
-            throw new RegistrationException(ResultEnum.NO_REGISTRATION);
-        }
-        return  ResultUtil.success(registrationTempRepository.findByregistration(registration));
 
-    }
 
 
 
