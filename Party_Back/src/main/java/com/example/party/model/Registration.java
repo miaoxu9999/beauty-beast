@@ -16,13 +16,21 @@ import java.util.List;
  * @Modified By :
  */
 @Entity
-@ComponentScan(basePackages = {"com.example.party.model"})
+@Table(name = "Registration")
 public class Registration {
+    public void setRegistrationid(Integer registrationid) {
+        this.registrationid = registrationid;
+    }
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer registrationid;
 
-//    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
+    public void setActivityTime(Date activityTime) {
+        this.activityTime = activityTime;
+    }
+
+    //    @ManyToMany(cascade = CascadeType.PERSIST, fetch = FetchType.LAZY)
 //    @JoinTable(joinColumns = {@JoinColumn(name = "memberid")}, inverseJoinColumns = {@JoinColumn(name = "registration_id")})
     @OneToMany(mappedBy = "registration", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     @JsonBackReference
@@ -33,13 +41,11 @@ public class Registration {
     @DateTimeFormat
     private Date activityTime;//活动时间
 
+
     public Integer getRegistrationid() {
         return registrationid;
     }
 
-    public void setRegistrationid(Integer registration_id) {
-        this.registrationid = registrationid;
-    }
 
     public List<RegistrationTemp> getRegistration_temps() {
         return registration_temps;
@@ -62,7 +68,9 @@ public class Registration {
     }
 
     public void setActivityTime(String activityTime) {
+//        System.out.println(activityTime);
         Date date = DataConvert.ConvertStringToDate(activityTime);
+        System.out.println(date);
         this.activityTime = date;
     }
 }

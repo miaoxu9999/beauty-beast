@@ -51,6 +51,8 @@ public class Registration_Controller {
     @PutMapping(value = "/Registration")
     public Result updateRegistration(@RequestBody Registration registration)
     {
+        System.out.println(registration.getRegistrationid());
+        System.out.println(registration.getActivityTime());
         return ResultUtil.success(registration_repository.save(registration));
     }
 
