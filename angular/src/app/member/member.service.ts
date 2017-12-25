@@ -33,11 +33,11 @@ export class MemberService {
       .toPromise()
       .then(data => data['code'] as number).catch(this.handleError);
   }
-  create(member: Member): Promise<Member> {
+  create(member: Member): Promise<number> {
     return this.http
       .post('/api/partymember', JSON.stringify(member), {headers: this.headers})
       .toPromise()
-      .then(data => data['data'] as  Member)
+      .then(data => data['code'] as  number)
       .catch(this.handleError);
   }
   delete(id: number): Promise<number> {

@@ -9,12 +9,24 @@ import {Member} from '../member';
   styleUrls: ['../member.component.css']
 })
 export class MemberCreateComponent implements OnInit {
-
+  code=0;
   member = new  Member();
   constructor(public router: Router,public memberService: MemberService) { }
   ngOnInit(){
   }
-  save(){
-    this.memberService.create(this.member).then();
+
+  save() {
+    this.memberService.create(this.member).then(code => this.code = code);
+    if (this.code === 0) {
+      if (confirm('增加成功，是否离开本页？')) {
+        this.router.navigate(['/layout/member']);
+      }
+    }
+    else{
+      alert('增加失败');
+    }
+  }
+  cancel() {
+    this.router.navigate(['/layout/member']);
   }
 }

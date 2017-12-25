@@ -29,7 +29,6 @@ export class RegistrationComponent implements OnInit {
     }
   }
   edit(registerationId:any){
-    alert(registerationId);
     this.router.navigate(['/layout/registerationupdate/' + registerationId]);
   }
   delete(){

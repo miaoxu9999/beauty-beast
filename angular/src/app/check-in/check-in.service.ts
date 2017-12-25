@@ -28,11 +28,11 @@ export class CheckInService {
       .toPromise()
       .then(data => data['code'] as number).catch(this.handleError);
   }
-  create(registration: Registration): Promise<Registration> {
+  create(registration: Registration): Promise<number> {
     return this.http
       .post('/api/Registration', JSON.stringify(registration), {headers: this.headers})
       .toPromise()
-      .then(data => data['data'] as  Registration)
+      .then(data => data['code'] as  number)
       .catch(this.handleError);
   }
   delete(id: number): Promise<number> {
