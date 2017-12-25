@@ -67,10 +67,10 @@ public class Registration {
         return activityTime;
     }
 
-    public void setActivityTime(String activityTime) {
-//        System.out.println(activityTime);
-        Date date = DataConvert.ConvertStringToDate(activityTime);
-        System.out.println(date);
-        this.activityTime = date;
-    }
+//    public void setActivityTime(String activityTime) {
+////        System.out.println(activityTime);
+//        Date date = DataConvert.ConvertStringToDate(activityTime);
+//        System.out.println(date);
+//        this.activityTime = date;
+//    }
 }
