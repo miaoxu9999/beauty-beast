@@ -27,7 +27,7 @@ public class RegistrationTemp {
 
 
     @ManyToOne(optional = false)
-    @JsonIgnore
+//    @JsonIgnore
     private Registration registration;
 
     private RegistrationType registrationType; //签到状态

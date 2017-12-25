@@ -4,6 +4,7 @@ import com.example.party.RegistrationType;
 import com.example.party.enums.ResultEnum;
 import com.example.party.exception.PartyMemberException;
 import com.example.party.exception.RegistrationException;
+import com.example.party.exception.RegistrationTempException;
 import com.example.party.model.PartyMember;
 import com.example.party.model.Registration;
 import com.example.party.model.RegistrationTemp;
@@ -83,7 +84,22 @@ public class Registration_Controller {
         {
             throw new RegistrationException(ResultEnum.NO_REGISTRATION);
         }
-        return  ResultUtil.success(registrationTempRepository.findByregistration(registration));
+        List<RegistrationTemp> registrationTemp = registrationTempRepository.findByregistration(registration);
+        if (registrationTemp == null || registrationTemp.size() <= 0)
+        {
+            throw new RegistrationTempException(ResultEnum.NO_MEMBER_REGISTRATION);
+        }
+        else if (registrationTemp.get(0).getRegistration() == null)
+        {
+            throw new RegistrationException(ResultEnum.NO_REGISTRATION);
+        }
+        //循环list，将member的信息置空（除了第一个）
+        for (int i  =1; i < registrationTemp.size(); i++)
+        {
+            registrationTemp.get(i).setRegistration(null);
+        }
+
+        return  ResultUtil.success(registrationTemp);
 
     }
 
@@ -91,15 +107,26 @@ public class Registration_Controller {
       根据memberid查找对应member的活动签到情况
      */
     @GetMapping(value = "/getRegistrationByMember/{id}")
-    public Result getRegistrationByMember(@PathVariable("id") Integer memberid)
-    {
+    public Result getRegistrationByMember(@PathVariable("id") Integer memberid) {
         PartyMember partyMember = partyMemberRepository.findOne(memberid);
 
-        if (partyMember == null)
-        {
+        if (partyMember == null) {
             throw new PartyMemberException(ResultEnum.NO_USER_FOUND);
         }
         List<RegistrationTemp> registrationTemp = registrationTempRepository.findBypartyMember(partyMember);
+        if (registrationTemp == null || registrationTemp.size() <= 0)
+        {
+            throw new RegistrationTempException(ResultEnum.NO_MEMBER_REGISTRATION);
+        }
+        else if (registrationTemp.get(0).getPartyMember() == null)
+        {
+            throw new PartyMemberException(ResultEnum.NO_USER_FOUND);
+        }
+        //循环list，将member的信息置空（除了第一个）
+        for (int i  =1; i < registrationTemp.size(); i++)
+        {
+            registrationTemp.get(i).setPartyMember(null);
+        }
         return ResultUtil.success(registrationTemp);
     }
 
