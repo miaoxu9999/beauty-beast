@@ -48,6 +48,6 @@ export class RegistrationComponent implements OnInit {
     this.getRegistrations();
   }
   create(){
-    this.router.navigate(['/layout/membercreate']);
+    this.router.navigate(['/layout/registerationcreate']);
   }
 }

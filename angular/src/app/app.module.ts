@@ -33,6 +33,7 @@ import {CheckInService} from './check-in/check-in.service';
 import { ListComponent } from './check-in/list/list.component';
 import { RegistrationComponent } from './registration/registration.component';
 import {RegistrationUpdateComponent} from './registration/update/registration-update.component';
+import {RegistrationCreateComponent} from './registration/create/registration-create.component';
 
 
 
@@ -60,7 +61,8 @@ import {RegistrationUpdateComponent} from './registration/update/registration-up
     MemberCreateComponent,
     ListComponent,
     RegistrationComponent,
-    RegistrationUpdateComponent
+    RegistrationUpdateComponent,
+    RegistrationCreateComponent
   ],
   imports: [
     BrowserModule,
