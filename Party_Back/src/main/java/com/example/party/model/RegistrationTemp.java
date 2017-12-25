@@ -22,6 +22,7 @@ public class RegistrationTemp {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     @ManyToOne(optional = false)
+//    @JsonIgnore
     private PartyMember partyMember;
 
 

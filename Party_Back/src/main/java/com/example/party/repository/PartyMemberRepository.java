@@ -28,4 +28,6 @@ public interface PartyMemberRepository extends JpaRepository<PartyMember, Intege
             "(s.privilegeType like %?1%  or ?1 = null) or " +
             "(s.studentID like %?1%  or ?1 = null)")
     public Page<PartyMember> findBynameAndprivilegeTypeAndstudentIDLike(String condation, Pageable pageable);
+
+
 }

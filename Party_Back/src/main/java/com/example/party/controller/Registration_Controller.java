@@ -2,10 +2,13 @@ package com.example.party.controller;
 
 import com.example.party.RegistrationType;
 import com.example.party.enums.ResultEnum;
+import com.example.party.exception.PartyMemberException;
 import com.example.party.exception.RegistrationException;
+import com.example.party.model.PartyMember;
 import com.example.party.model.Registration;
 import com.example.party.model.RegistrationTemp;
 import com.example.party.model.Result;
+import com.example.party.repository.PartyMemberRepository;
 import com.example.party.repository.RegistrationRepository;
 import com.example.party.repository.RegistrationTempRepository;
 import com.example.party.util.ResultUtil;
@@ -25,6 +28,9 @@ import java.util.List;
 public class Registration_Controller {
     @Autowired
     private RegistrationRepository registration_repository;
+
+    @Autowired
+    private PartyMemberRepository partyMemberRepository;
 
     @Autowired
     private RegistrationTempRepository registrationTempRepository;
@@ -79,6 +85,22 @@ public class Registration_Controller {
         }
         return  ResultUtil.success(registrationTempRepository.findByregistration(registration));
 
+    }
+
+    /*
+      根据memberid查找对应member的活动签到情况
+     */
+    @GetMapping(value = "/getRegistrationByMember/{id}")
+    public Result getRegistrationByMember(@PathVariable("id") Integer memberid)
+    {
+        PartyMember partyMember = partyMemberRepository.findOne(memberid);
+
+        if (partyMember == null)
+        {
+            throw new PartyMemberException(ResultEnum.NO_USER_FOUND);
+        }
+        List<RegistrationTemp> registrationTemp = registrationTempRepository.findBypartyMember(partyMember);
+        return ResultUtil.success(registrationTemp);
     }
 
 

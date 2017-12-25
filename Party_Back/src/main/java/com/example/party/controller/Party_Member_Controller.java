@@ -92,6 +92,7 @@ public class Party_Member_Controller {
         {
             throw new PartyMemberException(ResultEnum.PAGE_TOO_LARGE);
         }
+
         return ResultUtil.success(partyMembers);
     }
 
