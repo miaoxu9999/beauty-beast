@@ -73,62 +73,7 @@ public class Registration_Controller {
         return ResultUtil.success(registration_repository.findAll());
     }
 
-    /*
-    根据ID查询签到表
-     */
-    @GetMapping(value =  "/getAllAllPeopleRegistration/{id}")
-    public Result getAllPeopleRegistration(@PathVariable("id") Integer id)
-    {
-        Registration registration = registration_repository.findByregistrationid(id).get(0);
-        if (registration == null)
-        {
-            throw new RegistrationException(ResultEnum.NO_REGISTRATION);
-        }
-        List<RegistrationTemp> registrationTemp = registrationTempRepository.findByregistration(registration);
-        if (registrationTemp == null || registrationTemp.size() <= 0)
-        {
-            throw new RegistrationTempException(ResultEnum.NO_MEMBER_REGISTRATION);
-        }
-        else if (registrationTemp.get(0).getRegistration() == null)
-        {
-            throw new RegistrationException(ResultEnum.NO_REGISTRATION);
-        }
-        //循环list，将member的信息置空（除了第一个）
-        for (int i  =1; i < registrationTemp.size(); i++)
-        {
-            registrationTemp.get(i).setRegistration(null);
-        }
 
-        return  ResultUtil.success(registrationTemp);
-
-    }
-
-    /*
-      根据memberid查找对应member的活动签到情况
-     */
-    @GetMapping(value = "/getRegistrationByMember/{id}")
-    public Result getRegistrationByMember(@PathVariable("id") Integer memberid) {
-        PartyMember partyMember = partyMemberRepository.findOne(memberid);
-
-        if (partyMember == null) {
-            throw new PartyMemberException(ResultEnum.NO_USER_FOUND);
-        }
-        List<RegistrationTemp> registrationTemp = registrationTempRepository.findBypartyMember(partyMember);
-        if (registrationTemp == null || registrationTemp.size() <= 0)
-        {
-            throw new RegistrationTempException(ResultEnum.NO_MEMBER_REGISTRATION);
-        }
-        else if (registrationTemp.get(0).getPartyMember() == null)
-        {
-            throw new PartyMemberException(ResultEnum.NO_USER_FOUND);
-        }
-        //循环list，将member的信息置空（除了第一个）
-        for (int i  =1; i < registrationTemp.size(); i++)
-        {
-            registrationTemp.get(i).setPartyMember(null);
-        }
-        return ResultUtil.success(registrationTemp);
-    }
 
 
 
