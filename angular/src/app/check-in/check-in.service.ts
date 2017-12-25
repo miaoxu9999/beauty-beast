@@ -16,7 +16,7 @@ export class CheckInService {
 
 
   getRegistrationById(registrationId:any): Promise<Registration>{
-    return this.http.get('/api/getAllAllPeopleRegistration/' + registrationId)
+    return this.http.get('/api/Registration/' + registrationId)
       .toPromise()
       .then(data => data['data'] as Registration
       )
